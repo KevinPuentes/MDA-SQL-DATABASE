@@ -1,4 +1,7 @@
-This is an example of a simple Entity DSL.
+
+# Ejercicio MDE SQL SERVER
+
+This is an example of a simple Entity DSL for SQL database.
 
 File `entity.tx` contains a grammar of the language.  Each entity DSL model
 consists of zero or more simple types definitions and one or more `Entity`
@@ -25,6 +28,8 @@ The code is generated in the `srcgen` subfolder using
 tool but model can't because it depends on two built-in simple types (`integer`
 and `string`) which must be provided during meta-model instantiation (see
 `entity_test.py` file).
+
+# Usage
 
 To run the example do the following:
 
@@ -53,3 +58,9 @@ To run the example do the following:
   This will produce html and js files to `Address` and `Person` in `srcgen`
   folder that corresponds to entities from the Person model.
 
+
+# Authors
+
+Kevin Alexander Puentes Yaya - 20151020040  
+Diego Dayan Guerra Nuñez - 20152020024
+Daniel Augusto Parra Castiblanco - 20151020015
