@@ -56,7 +56,7 @@ def main(debug=False):
     template = jinja_env.get_template('database.template')
 
     for entity in person_model.entities:
-        # For each entity generate java file
+        # crea la base de datos
         with open(join(srcgen_folder,
                        "%s.sql" % "prueba"), 'w') as f:
             f.write(template.render(entity=entity))
@@ -65,19 +65,60 @@ def main(debug=False):
     template = jinja_env.get_template('tabla.template')
 
     for entity in person_model.entities:
-        # For each entity generate html file
+        # crea las tablas
         with open(join(srcgen_folder,
                        "%s.sql" % "prueba"), 'a') as f:
             f.write(template.render(entity=entity))
-
-    # Load template
+			
+	# Load template
     template = jinja_env.get_template('altertable.template')
 
     for entity in person_model.entities:
-        # For each entity generate html file
+        # crea las altertables
         with open(join(srcgen_folder,
                        "%s.sql" % "prueba"), 'a') as f:
             f.write(template.render(entity=entity))
+	
+		# Load template
+    template = jinja_env.get_template('insert.template')
+
+    for entity in person_model.entities:
+        # genera los select para las consultas
+        with open(join(srcgen_folder,
+                       "%s.sql" % "prueba"), 'a') as f:
+            f.write(template.render(entity=entity))
+	
+	# Load template
+    template = jinja_env.get_template('update.template')
+
+    for entity in person_model.entities:
+        # genera los select para las consultas
+        with open(join(srcgen_folder,
+                       "%s.sql" % "prueba"), 'a') as f:
+            f.write(template.render(entity=entity))
+			
+	
+	# Load template
+    template = jinja_env.get_template('delete.template')
+
+    for entity in person_model.entities:
+        # genera los deletes
+        with open(join(srcgen_folder,
+                       "%s.sql" % "prueba"), 'a') as f:
+            f.write(template.render(entity=entity))
+			
+	# Load template
+    template = jinja_env.get_template('select.template')
+
+    for entity in person_model.entities:
+        # genera los select para las consultas
+        with open(join(srcgen_folder,
+                       "%s.sql" % "prueba"), 'a') as f:
+            f.write(template.render(entity=entity))
+	
+	
+	
+	
 
    
 if __name__ == "__main__":

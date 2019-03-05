@@ -1,0 +1,14 @@
+{% if "_" in entity.name %}
+{%else%}
+{% for property in entity.properties %}
+	{% if property is entity and loop.first %}
+		{% if loop.last %}
+SELECT*FROM {{entity.name|capitalize}} WHERE {{property.name}}='NOTAS GUENAS';
+		{% endif %}
+	{% else %}
+		{% if loop.last %}
+SELECT*FROM {{entity.name|capitalize}} WHERE {{property.name}}='NOTAS GUENAS';
+		{% endif %}
+	{% endif %}
+{% endfor %}
+{% endif %}

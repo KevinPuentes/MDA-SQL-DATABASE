@@ -1,0 +1,14 @@
+{% if "_" in entity.name %}
+{%else%}
+{% for property in entity.properties %}
+	{% if property is entity%}
+		{% if loop.last %}
+UPDATE {{entity.name|capitalize}} SET {{property.name}}='Cinquirris' WHERE {% if loop.last %}{{property.name}}{% endif %};
+		{% endif %}
+        {% else %}
+        {% if loop.last %}
+UPDATE {{entity.name|capitalize}} SET {{property.name}}='Cinquirris' WHERE {% if loop.last %}{{property.name}}{% endif %};
+		{% endif %}
+	{% endif%}
+{% endfor %}
+{% endif %}

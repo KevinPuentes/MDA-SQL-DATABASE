@@ -1,5 +1,6 @@
+{% if "_" in entity.name %}
 
 ALTER TABLE {{entity.name|capitalize}}
 ADD CONSTRAINT FK_{{entity.properties[0].name|capitalize}}
 FOREIGN KEY ({{entity.properties[0].name|capitalize}}) REFERENCES entity.name({{entity.properties[0].name|capitalize}}); 
-
+{% endif %}
