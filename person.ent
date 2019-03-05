@@ -1,4 +1,5 @@
 entity Persona {
+  id_persona : integer
   cedula : integer
   nombre : varchar       // Nombre de la persona
   apellido : varchar       // Apellido de la persona
@@ -9,14 +10,25 @@ entity Persona {
 }                     // See entity_test.py
 
 entity Trabajo {
-  id : integer
+  id_trabajo : integer
   direccion : varchar
   ciudad : varchar
   pais : varchar
 }
 
 entity Telefono {
-  id : integer
+  id_telefono : integer
   indicador : varchar
   numero : varchar
+}
+
+
+entity Trabajo_Persona{
+	id_trabajo : integer
+	id_persona : integer
+}
+
+entity Telefono_Persona{
+	id_persona : integer
+	id_telefono : integer
 }
